@@ -1,363 +1,368 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سایت کشاورزی و دامداری</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت کشاورزی و دامداری</title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: tahoma;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:tahoma;
-}
+        body {
+            background: #f2f2f2;
+            direction: rtl;
+        }
 
-body{
-background:#f2f2f2;
-direction:rtl;
-}
+        /* HEADER */
 
-/* HEADER */
+        header {
+            background: linear-gradient(to left, #1b5e20, #4caf50);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
 
-header{
-background:linear-gradient(to left,#1b5e20,#4caf50);
-padding:20px;
-color:white;
-text-align:center;
-}
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
 
-header h1{
-font-size:32px;
-margin-bottom:10px;
-}
+        header p {
+            font-size: 14px;
+        }
 
-header p{
-font-size:14px;
-}
+        /* MENU */
 
-/* MENU */
+        nav {
+            background: #2e7d32;
+        }
 
-nav{
-background:#2e7d32;
-}
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
 
-nav ul{
-display:flex;
-justify-content:center;
-list-style:none;
-flex-wrap:wrap;
-}
+        nav ul li {
+            margin: 10px;
+        }
 
-nav ul li{
-margin:10px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: 0.3s;
+            display: block;
+        }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-padding:10px 18px;
-border-radius:30px;
-transition:0.3s;
-display:block;
-}
+        nav ul li a:hover {
+            background: #66bb6a;
+        }
 
-nav ul li a:hover{
-background:#66bb6a;
-}
+        /* MAIN */
 
-/* MAIN */
+        .container {
+            width: 1200px;
+            max-width: 95%;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            gap: 20px;
+        }
 
-.container{
-width:1200px;
-max-width:95%;
-margin:20px auto;
-display:grid;
-grid-template-columns:250px 1fr 250px;
-gap:20px;
-}
+        /* SIDEBAR */
 
-/* SIDEBAR */
+        .sidebar {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.sidebar{
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
+        .sidebar h3 {
+            background: #2e7d32;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
 
-.sidebar h3{
-background:#2e7d32;
-color:white;
-padding:10px;
-border-radius:5px;
-margin-bottom:15px;
-font-size:18px;
-}
+        .sidebar ul {
+            list-style: none;
+        }
 
-.sidebar ul{
-list-style:none;
-}
+        .sidebar ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
 
-.sidebar ul li{
-padding:10px 0;
-border-bottom:1px solid #ddd;
-}
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
 
-.sidebar ul li a{
-text-decoration:none;
-color:#333;
-}
+        .sidebar ul li a:hover {
+            color: #2e7d32;
+        }
 
-.sidebar ul li a:hover{
-color:#2e7d32;
-}
+        /* CONTENT */
 
-/* CONTENT */
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.content{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
+        .news {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
 
-.news{
-margin-bottom:30px;
-padding-bottom:20px;
-border-bottom:1px solid #ddd;
-}
+        .news h2 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
 
-.news h2{
-color:#2e7d32;
-margin-bottom:10px;
-}
+        .news p {
+            line-height: 2;
+            color: #555;
+        }
 
-.news p{
-line-height:2;
-color:#555;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            background: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
-.btn{
-display:inline-block;
-margin-top:10px;
-background:#2e7d32;
-color:white;
-padding:10px 20px;
-text-decoration:none;
-border-radius:5px;
-}
+        .btn:hover {
+            background: #43a047;
+        }
 
-.btn:hover{
-background:#43a047;
-}
+        /* IMAGE BOX */
 
-/* IMAGE BOX */
+        .hero {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            background: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200') center/cover;
+            margin-bottom: 20px;
+        }
 
-.hero{
-width:100%;
-height:300px;
-border-radius:10px;
-background:url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200') center/cover;
-margin-bottom:20px;
-}
+        /* STATS */
 
-/* STATS */
+        .stats {
+            margin-top: 20px;
+        }
 
-.stats{
-margin-top:20px;
-}
+        .stats li {
+            padding: 8px 0;
+        }
 
-.stats li{
-padding:8px 0;
-}
+        /* GALLERY */
 
-/* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
+        .gallery img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
 
-.gallery img{
-width:100%;
-height:100px;
-object-fit:cover;
-border-radius:10px;
-}
+        /* FOOTER */
 
-/* FOOTER */
+        footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
 
-footer{
-background:#1b5e20;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:30px;
-}
+        /* RESPONSIVE */
 
-/* RESPONSIVE */
+        @media(max-width:900px) {
 
-@media(max-width:900px){
+            .container {
+                grid-template-columns: 1fr;
+            }
 
-.container{
-grid-template-columns:1fr;
-}
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
 
-nav ul{
-flex-direction:column;
-align-items:center;
-}
-
-}
-
-</style>
+        }
+    </style>
 
 </head>
+
 <body>
 
-<header>
-<h1>سایت کشاورزی و دامداری</h1>
-<p>مرجع اخبار، آموزش و خدمات کشاورزی</p>
-</header>
+    <header>
+        </div>
+        <h1>سایت کشاورزی و دامداری</h1>
+        <p>مرجع اخبار، آموزش و خدمات کشاورزی</p>
+    </header>
 
-<nav>
-<ul>
-<li><a href="#">صفحه اصلی</a></li>
-<li><a href="#">اخبار</a></li>
-<li><a href="#">دامداری</a></li>
-<li><a href="#">کشاورزی</a></li>
-<li><a href="#">گالری</a></li>
-<li><a href="#">تماس با ما</a></li>
-</ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#">صفحه اصلی</a></li>
+            <li><a href="#">اخبار</a></li>
+            <li><a href="#">دامداری</a></li>
+            <li><a href="#">کشاورزی</a></li>
+            <li><a href="#">گالری</a></li>
+            <li><a href="#">تماس با ما</a></li>
+        </ul>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-<!-- RIGHT SIDEBAR -->
+        <!-- RIGHT SIDEBAR -->
 
-<div class="sidebar">
+        <div class="sidebar">
 
-<h3>دسترسی سریع</h3>
+            <h3>بخش ها</h3>
 
-<ul>
-<li><a href="#">خدمات کشاورزی</a></li>
-<li><a href="#">محصولات دامی</a></li>
-<li><a href="#">قیمت نهاده ها</a></li>
-<li><a href="#">آب و هوا</a></li>
-<li><a href="#">آموزش کوددهی</a></li>
-</ul>
+            <ul>
+                <li><a href="#">خدمات کشاورزی</a></li>
+                <li><a href="#">خدمات دامی</a></li>
+            </ul>
 
-<div class="stats">
-<h3>آمار سایت</h3>
+            <div class="stats">
+                <h3>آمار سایت</h3>
 
-<ul>
-<li>بازدید امروز : 120</li>
-<li>بازدید دیروز : 340</li>
-<li>کاربران آنلاین : 8</li>
-<li>کل بازدید : 12500</li>
-</ul>
+                <ul>
+                    <li>تاریخ آخرین پست :..../../..</li>
+                    <li>تعداد پست های گذاشته شده:2</li>
+                    <li>بازدید امروز :60</li>
+                    <li>تعداد کاربران فعال:0</li>
 
-</div>
+                </ul>
 
-</div>
+            </div>
+            <!--بخش فکت ها-->
+            <h3>فکت اول امروز</h3>
+            <h4>........</h4>
+            <br>
+            <h3>فکت دوم امروز</h3>
+            <h4>........</h4>
+        </div>
 
-<!-- CONTENT -->
+        <!-- CONTENT -->
 
-<div class="content">
+        <div class="content">
 
-<div class="hero"></div>
+            <div class="hero"></div>
 
-<div class="news">
+            <div class="news">
 
-<h2>افزایش تولید محصولات کشاورزی</h2>
+                <h2>افزایش تولید محصولات کشاورزی</h2>
 
-<p>
-با استفاده از روش های نوین آبیاری و کوددهی،
-کشاورزان می توانند بهره وری محصولات خود را افزایش دهند.
-</p>
+                <p>
+                    با استفاده از روش های نوین آبیاری و کوددهی،
+                    کشاورزان می توانند بهره وری محصولات خود را افزایش دهند.
+                </p>
 
-<a href="#" class="btn">ادامه مطلب</a>
+                <a href="#" class="btn">ادامه مطلب</a>
 
-</div>
+            </div>
 
-<div class="news">
+            <div class="news">
 
-<h2>آموزش نگهداری دام</h2>
+                <h2>آموزش نگهداری دام</h2>
 
-<p>
-رعایت تغذیه مناسب و واکسیناسیون منظم،
-تاثیر زیادی در سلامت دام ها دارد.
-</p>
+                <p>
+                    رعایت تغذیه مناسب و واکسیناسیون منظم،
+                    تاثیر زیادی در سلامت دام ها دارد.
+                </p>
 
-<a href="#" class="btn">ادامه مطلب</a>
+                <a href="#" class="btn">ادامه مطلب</a>
 
-</div>
+            </div>
 
-<div class="news">
+            <div class="news">
 
-<h2>نمایشگاه تجهیزات کشاورزی</h2>
+                <h2>نمایشگاه تجهیزات کشاورزی</h2>
 
-<p>
-جدیدترین تجهیزات و ماشین آلات کشاورزی
-در نمایشگاه امسال معرفی شدند.
-</p>
+                <p>
+                    جدیدترین تجهیزات و ماشین آلات کشاورزی
+                    در نمایشگاه امسال معرفی شدند.
+                </p>
 
-<a href="#" class="btn">ادامه مطلب</a>
+                <a href="#" class="btn">ادامه مطلب</a>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<!-- LEFT SIDEBAR -->
+        <!-- LEFT SIDEBAR -->
 
-<div class="sidebar">
+        <div class="sidebar">
 
-<h3>گالری تصاویر</h3>
+            <h3>گالری تصاویر</h3>
 
-<div class="gallery">
+            <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=400">
+                <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=400">
 
-<img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=400">
+                <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=400">
 
-<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=400">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=400">
 
-<img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?q=80&w=400">
+                <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?q=80&w=400">
 
-</div>
+            </div>
 
-<br>
+            <br>
 
-<h3>نظرسنجی</h3>
+            <h3>نظرسنجی</h3>
 
-<p style="margin-bottom:10px;">
-از سایت ما راضی هستید؟
-</p>
+            <p style="margin-bottom:10px;">
+                از سایت ما راضی هستید؟
+            </p>
 
-<form>
+            <form>
 
-<input type="radio" name="vote"> بله
-<br><br>
+                <input type="radio" name="vote"> بله
+                <br><br>
 
-<input type="radio" name="vote"> خیر
-<br><br>
+                <input type="radio" name="vote"> خیر
+                <br><br>
 
-<button class="btn">ارسال نظر</button>
+                <button class="btn">ارسال نظر</button>
 
-</form>
+            </form>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<footer>
+    <footer>
 
-تمام حقوق محفوظ است | سایت کشاورزی و دامداری
+        تمام حقوق محفوظ است | سایت کشاورزی و دامداری
 
-</footer>
+    </footer>
 
 </body>
+
 </html>
